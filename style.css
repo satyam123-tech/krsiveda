@@ -1,0 +1,40 @@
+/* Krṣiveda custom styles (the page is Tailwind-based; this file adds what Tailwind does not) */
+
+html { scroll-behavior: smooth; }
+
+/* "Satellite" dark theme toggled by toggleTheme() in app.js (adds .satellite-theme to <body>) */
+body { transition: background-color .25s ease, color .25s ease; }
+body.satellite-theme { background-color: #0b1512 !important; color: #d1e7dd !important; }
+body.satellite-theme .bg-white,
+body.satellite-theme .bg-slate-50,
+body.satellite-theme .bg-slate-100,
+body.satellite-theme .bg-emerald-50,
+body.satellite-theme .bg-emerald-50\/70,
+body.satellite-theme .bg-amber-50 { background-color: #12231d !important; }
+body.satellite-theme .border-slate-100,
+body.satellite-theme .border-slate-200,
+body.satellite-theme .border-slate-300,
+body.satellite-theme .border-emerald-200 { border-color: #24413a !important; }
+body.satellite-theme .text-slate-900,
+body.satellite-theme .text-slate-800,
+body.satellite-theme .text-slate-700,
+body.satellite-theme .text-emerald-950,
+body.satellite-theme .text-emerald-900 { color: #e8f5ee !important; }
+body.satellite-theme .text-slate-600,
+body.satellite-theme .text-slate-500,
+body.satellite-theme .text-slate-400 { color: #9db8ad !important; }
+body.satellite-theme input,
+body.satellite-theme select,
+body.satellite-theme textarea { color: #e8f5ee; }
+
+/* Hide scrollbar on the mobile tab strip */
+.overflow-x-auto { scrollbar-width: none; }
+.overflow-x-auto::-webkit-scrollbar { display: none; }
+
+/* Printing the Soil Health Card: show only the card */
+@media print {
+  body * { visibility: hidden !important; }
+  #soil-card-print-modal, #soil-card-print-modal * { visibility: visible !important; }
+  #soil-card-print-modal { position: absolute !important; inset: 0 !important; background: #fff !important; padding: 0 !important; }
+  #soil-card-print-modal button { display: none !important; }
+}
